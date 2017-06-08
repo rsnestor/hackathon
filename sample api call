@@ -1,0 +1,17 @@
+StringBuffer b = new StringBuffer();
+        b.append("loan_type").append("=").append("AGENCY")
+                .append("&").append("loan_amount").append("=").append("50000")
+                .append("&").append("loan_term").append("=").append("30")
+                .append("&").append("maxfico").append("=").append("750")
+                .append("&").append("minfico").append("=").append("650")
+                .append("&").append("price").append("=").append(725000)
+                .append("&").append("rate_structure").append("=").append("FIXED")
+                .append("&").append("state").append("=").append("VA");
+        RestTemplate restTemplate= new RestTemplate();
+        String url = "https://www.consumerfinance.gov/oah-api/rates/rate-checker?" + b.toString();
+        String rateModel =
+
+                restTemplate.getForObject(url,
+                        String.class);
+
+        System.out.println(rateModel);
