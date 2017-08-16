@@ -1,4 +1,4 @@
-# hackathon
+# sffet hacks
 Hackathon 1
 ---
 - [Conversational BOTs](https://aws.amazon.com/lex)
