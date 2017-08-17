@@ -1,0 +1,23 @@
+<div style="text-align:center">
+	<button (click)="getDetails()">Get Details</button>	
+</div>
+<!--<ul>
+	<li *ngFor="let user of users">
+		{{user.name}}
+	</li>
+</ul>-->
+<div style="height:100px"></div>
+<table *ngIf="users.length > 0" align="center">
+<thead>
+<th>ID</th>
+<th>NAME</th>
+</thead>
+	<tbody>	
+		<tr *ngFor="let user of users">
+		<td>{{user.id}}</td>
+		<td>{{user.name}}</td>
+		
+		</tr>
+	</tbody>
+	
+</table>
