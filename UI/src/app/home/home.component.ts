@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
 
                 this.removeMarkers() ;
 		
-		 this.http.get('http://jsonplaceholder.typicode.com/users/')
+		 this.http.get('https://jsonplaceholder.typicode.com/users/')
 		.flatMap((data) => data.json())		
 		.subscribe((data) => {
 			
