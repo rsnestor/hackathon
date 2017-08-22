@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+
+
 <html>
   <head>
     <meta charset=UTF-8>
@@ -7,7 +9,55 @@
     <title>Full Slack Developers Demo</title>
     <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css">
     <script src="https://openlayers.org/en/v3.12.1/build/ol.js"></script>
-    <base href="/">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <base href="./">
+    <style>
+    .popup-table td{
+        text-align:left;
+    }
+    .ol-popup {
+        position: absolute;
+        background-color: white;
+        -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        padding: 2px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 12px;
+        left: -50px;
+        min-width: 230px;
+    }
+    .ol-popup:after, .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    .ol-popup:after {
+        border-top-color: white;
+        border-width: 2px;
+        left: 2px;
+        margin-left: -10px;
+    }
+    .ol-popup:before {
+        border-top-color: #cccccc;
+        border-width: 2px;
+        left: 2px;
+        margin-left: -11px;
+    }
+    .ol-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+    }
+    .ol-popup-closer:after {
+        content: "x";
+    }
+</style>
   </head>
   <body>
 
