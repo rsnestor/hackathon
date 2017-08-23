@@ -2,8 +2,13 @@
 <script src="https://openlayers.org/en/v4.3.1/build/ol.js" type="text/javascript"></script>
 
 <div style="text-align:center">
+	<input id="message" type="text">
 	<button (click)="getDetails()">Get Details</button>	
 	<!--button (click)="createMap()">Get Details</button-->	
+	<button onclick="sendMsg()">I am Interested</button>
+</div>
+<div>
+<textarea id="echoText" rows="1" cols="100" style="border:none"></textarea>
 </div>
 <!--<ul>
 	<li *ngFor="let user of users">
@@ -22,8 +27,8 @@
 			</thead>
 				<tbody>	
 					<tr *ngFor="let user of users">
-					<td>{{user.long}}</td>
-					<td>{{user.lat}}</td>
+					<td>{{user.address.geo.lat}}</td>
+					<td>{{user.address.geo.lng}}</td>
 					
 					</tr>
 				</tbody>
