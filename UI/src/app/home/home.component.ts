@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
         jQuery: any;
 
 	users = [];
+        
+        //var client = new XMLHttpRequest()
 	
 	markerLayer: any;
 	
@@ -35,8 +37,8 @@ export class HomeComponent implements OnInit {
                     }) ;
                 
                 var olView = new ol.View({
-                    center: ol.proj.fromLonLat([-77, 38]),
-                    zoom: 2,
+                    center: ol.proj.fromLonLat([-77.5165309999, 39.05121]),
+                    zoom: 12,
                     minZoom: 1,
                     maxZoom: 20,
                     projection: 'EPSG:3857'
@@ -92,15 +94,16 @@ export class HomeComponent implements OnInit {
                                         if(feature.getGeometry().getType() == 'Point'){
                                                 var coordinate = evt.coordinate;
                                                 var id = feature.getId() ;
-                                                var name = self.users[id].name;
-                                                var companyName = self.users[id].company.name;
-                                                var url = self.users[id].website;
+                                                var street = self.users[id].street;
+                                                var city = self.users[id].city;
+                                                var zipcode = self.users[id].zip;
                                                 content.innerHTML = 
                                                 '<div>' +
                                                 '<table class="popup-table">' +
-                                                '<tr><td><span>name: '+name+'</span></td></tr>' +
-                                                '<tr><td><span>company: '+companyName+'</span></td></tr>' +
-                                                '<tr><td><span>website: <a href="http://'+url+'"> '+url+'</a></span></td></tr>' +            
+                                                '<tr><td><span>street: '+street+'</span></td></tr>' +
+                                                '<tr><td><span>city: '+city+'</span></td></tr>' +
+                                                '<tr><td><span>zipcode: '+zipcode+'</span></td></tr>' +
+                                                //'<tr><td><span>website: <a href="http://'+url+'"> '+url+'</a></span></td></tr>' +            
                                                 '</table>' +
                                                 '</div>' ;
                                                 map.addOverlay(overlay) ;
@@ -138,7 +141,7 @@ export class HomeComponent implements OnInit {
                         anchorYUnits: 'fraction',
                         opacity: 1,
                         src: './house-icon.png',
-                        scale: 0.1
+                        scale: 0.2
                         }),
                         //text:text
                 });
@@ -155,18 +158,19 @@ export class HomeComponent implements OnInit {
 
                 this.removeMarkers() ;
 		
-		 this.http.get('https://jsonplaceholder.typicode.com/users/')
-                 //this.http.get('http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1fy18vhuia3_6v82r&address=9416+Mayflower+Ct&citystatezip=Laurel%2C+MD')
+		 this.http.get('https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr')
 		.flatMap((data) => data.json())		
 		.subscribe((data) => {
 			
 		  this.users.push(data);
 		});
+                
+                //this.addMarker(parseFloat(this.users[0].long), parseFloat(this.users[0].lat), 0) ; 
 		
-		for(var i=0; i<this.users.length; i++){
+		for(var i=0; i<this.users.length-1; i++){
                         //this.users[i].url = "https://www.google.com";
-			this.addMarker(parseFloat(this.users[i].address.geo.lng), parseFloat(this.users[i].address.geo.lat), i) ;  
-		  }
+			this.addMarker(parseFloat(this.users[0].long), parseFloat(this.users[0].lat), 0) ;  
+		}
                 this.users = [];
 	}
 }
