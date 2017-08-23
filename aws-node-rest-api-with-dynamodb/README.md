@@ -49,11 +49,11 @@ region: us-east-1
 api keys:
   None
 endpoints:
-  POST - https://45wf34z5yf.execute-api.us-east-1.amazonaws.com/dev/addr
-  GET - https://45wf34z5yf.execute-api.us-east-1.amazonaws.com/dev/addr
-  GET - https://45wf34z5yf.execute-api.us-east-1.amazonaws.com/dev/addr/{id}
-  PUT - https://45wf34z5yf.execute-api.us-east-1.amazonaws.com/dev/addr/{id}
-  DELETE - https://45wf34z5yf.execute-api.us-east-1.amazonaws.com/dev/addr/{id}
+  POST - https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr
+  GET - https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr
+  GET - https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr/{id}
+  PUT - https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr/{id}
+  DELETE - https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr/{id}
 functions:
   serverless-rest-api-with-dynamodb-dev-update: arn:aws:lambda:us-east-1:488110005556:function:serverless-rest-api-with-dynamodb-dev-update
   serverless-rest-api-with-dynamodb-dev-get: arn:aws:lambda:us-east-1:488110005556:function:serverless-rest-api-with-dynamodb-dev-get
