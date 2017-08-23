@@ -9,3 +9,4 @@ Hackathon 2
 - [Serverless](https://github.com/serverless/serverless#quick-start)
 - [Zillow API](https://www.zillow.com/howto/api/APIOverview.htm)
 - [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS)
+- [Websocket](http://websocket.org)
