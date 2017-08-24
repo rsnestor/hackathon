@@ -78,6 +78,7 @@
 		function wsOpen(message){
 			//echoText.value += "Connected ... \n";
 			console.log("Hey connection open");
+			sendMsg("count");
 		}
 		/*function sendMsg(){
 			webSocket.send(message.value);
@@ -93,14 +94,22 @@
 			webSocket.close();
 		}
 		function wsGetMessage(message){			
+			if(message.data.includes("Property")){
 				console.log("got message " + message.data);
 				var el = document.getElementById("echoText");
-				el.value = message.data;
-				var img = document.getElementById('bell');
-    img.style.visibility = 'visible';
+				el.value = message.data;				
+			}else{
+				message.data.replace("count:", "")
+				console.log(message.data);
+				document.getElementById("count").innerHTML=message.data;
+			}
+			}
+				
+   /* img.style.visibility = 'visible';
 				//document.getElementById("eye").innerHTML=resultMap.get('count');
-		}
+		}*/
 		function wsClose(message){
+		sendMsg("count");
 			//echoText.value += "Disconnect ... \n";
 		}
 
