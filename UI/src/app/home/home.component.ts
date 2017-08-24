@@ -155,23 +155,24 @@ export class HomeComponent implements OnInit {
         }
 	
 	getDetails() {
-
-        this.removeMarkers() ;
-        var i=0;
+                this.removeMarkers() ;
+                var i=0;
 		
-		    this.http.get('https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr')
-		        .flatMap((data) => data.json())		
-		        .subscribe((data) => {
-			
-                  this.users.push(data);
-                  
-                  var longAddr = (data as any).long;
-                  var latAddr = (data as any).lat;
-                  if(longAddr !== undefined && latAddr !== undefined){
-                          this.addMarker(parseFloat(longAddr), parseFloat(latAddr), i) ;          
-                  }
-                  i = i+1;
-		    });
-        this.users = [];
-	  }
+		 this.http.get('https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr')
+		.flatMap((data) => data.json())		
+		.subscribe((data) => {
+                        //this.users.push(data);
+                        this.users[i] = data;
+
+                        var longAddr = (data as any).long;
+                        var latAddr = (data as any).lat;
+                        
+                        if(longAddr !== undefined && latAddr !== undefined){
+                                this.addMarker(parseFloat(longAddr), parseFloat(latAddr), i) ;          
+                        }
+                        i = i+1;
+		});
+                
+                //this.users = [];
+	}
 }
