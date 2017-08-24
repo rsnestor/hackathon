@@ -37,8 +37,8 @@ export class HomeComponent implements OnInit {
                     }) ;
                 
                 var olView = new ol.View({
-                    center: ol.proj.fromLonLat([-77.5165309999, 39.05121]),
-                    zoom: 12,
+                    center: ol.proj.fromLonLat([-77.482995, 39.053158]),
+                    zoom: 14,
                     minZoom: 1,
                     maxZoom: 20,
                     projection: 'EPSG:3857'
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
                 var popHtml = 
                         '<div id="popup" class="ol-popup">' +
                         '<a href="#" id="popup-closer" class="ol-popup-closer"></a>' +
-                        //'<div id="popup-content" style="width:300px;"></div>' +
+                        //'<div id="popup-content" style="width:360px;"></div>' +
                         '<div id="popup-content"></div>' +
                         '</div>' ;
                 var self = this ;
@@ -100,9 +100,9 @@ export class HomeComponent implements OnInit {
                                                 content.innerHTML = 
                                                 '<div>' +
                                                 '<table class="popup-table">' +
-                                                '<tr><td><span>street: '+street+'</span></td></tr>' +
-                                                '<tr><td><span>city: '+city+'</span></td></tr>' +
-                                                '<tr><td><span>zipcode: '+zipcode+'</span></td></tr>' +
+                                                '<tr><td><span>Street: '+street+'</span></td></tr>' +
+                                                '<tr><td><span>City: '+city+'</span></td></tr>' +
+                                                '<tr><td><span>Zipcode: '+zipcode+'</span></td></tr>' +
                                                 //'<tr><td><span>website: <a href="http://'+url+'"> '+url+'</a></span></td></tr>' +            
                                                 '</table>' +
                                                 '</div>' ;
@@ -156,21 +156,22 @@ export class HomeComponent implements OnInit {
 	
 	getDetails() {
 
-                this.removeMarkers() ;
+        this.removeMarkers() ;
+        var i=0;
 		
-		 this.http.get('https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr')
-		.flatMap((data) => data.json())		
-		.subscribe((data) => {
+		    this.http.get('https://wmusxd4z8i.execute-api.us-east-1.amazonaws.com/dev/addr')
+		        .flatMap((data) => data.json())		
+		        .subscribe((data) => {
 			
-		  this.users.push(data);
-		});
-                
-                //this.addMarker(parseFloat(this.users[0].long), parseFloat(this.users[0].lat), 0) ; 
-		
-		for(var i=0; i<this.users.length; i++){
-                        //this.users[i].url = "https://www.google.com";
-			this.addMarker(parseFloat(this.users[i].long), parseFloat(this.users[i].lat), i) ;  
-		}
-                this.users = [];
-	}
+                  this.users.push(data);
+                  
+                  var longAddr = (data as any).long;
+                  var latAddr = (data as any).lat;
+                  if(longAddr !== undefined && latAddr !== undefined){
+                          this.addMarker(parseFloat(longAddr), parseFloat(latAddr), i) ;          
+                  }
+                  i = i+1;
+		    });
+        this.users = [];
+	  }
 }
