@@ -1,10 +1,13 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import javax.websocket.EncodeException;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -21,7 +24,7 @@ public class WebsocketServer {
 	public  void  onOpen(Session session){
 		System.out.println("Open Connection ...");
 		if(!userSessions.contains(session.getId()))
-				userSessions.add(session);
+				userSessions.add(session);		
 	}
 	
 	@OnClose
@@ -33,28 +36,50 @@ public class WebsocketServer {
 		        i.remove();
 		    }
 		}
-		userSessions.remove(session);
+		userSessions.remove(session);	
+		broadcastMessageForCount();
 	}
 	
 	@OnMessage
 	public void onMessage(String message, Session session){
+		if(message.equalsIgnoreCase("count")){
+			System.out.println("return count");
+			
+			broadcastMessageForCount();
+		}else{
 		System.out.println("Message from the client: " + message);
 		
-		broadcastMessage("Another user is interested in this property", session);
+		
+		broadcastMessage("Property " + message + "is now under contract", session);
+		}
 			
 	}
+
 
 	@OnError
 	public void onError(Throwable e){
 		e.printStackTrace();
 	}
 
-	public static  void broadcastMessage(String message, Session session) {
+	public static  void broadcastMessage(String message, Session session)  {
 		 for (Session s : userSessions) {
 		  if (s.isOpen() && s.getId() != session.getId()) {
-		   try {
+		   try {			  			
 		    s.getBasicRemote().sendText(message);
 		    System.out.println("done with broadcast");	
+		   } catch (IOException e) {
+		    e.printStackTrace();
+		   }
+		  }
+		 }
+		}
+	
+	public static  void broadcastMessageForCount()  {
+		 for (Session s : userSessions) {
+		  if (s.isOpen()) {
+		   try {			  			
+		    s.getBasicRemote().sendText("" + userSessions.size() + "");
+		    System.out.println("done with broadcast for count");	
 		   } catch (IOException e) {
 		    e.printStackTrace();
 		   }
