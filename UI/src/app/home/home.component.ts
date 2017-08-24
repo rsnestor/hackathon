@@ -103,7 +103,8 @@ export class HomeComponent implements OnInit {
                                                 '<tr><td><span>Street: '+street+'</span></td></tr>' +
                                                 '<tr><td><span>City: '+city+'</span></td></tr>' +
                                                 '<tr><td><span>Zipcode: '+zipcode+'</span></td></tr>' +
-                                                //'<tr><td><span>website: <a href="http://'+url+'"> '+url+'</a></span></td></tr>' +            
+                                                //'<tr><td><span>website: <a href="http://'+url+'"> '+url+'</a></span></td></tr>' + 
+												'<tr><td><button id="undercontract" onclick="sendMsg(\'' + self.users[id].street + '\')">Under Contract</button></td></tr>'
                                                 '</table>' +
                                                 '</div>' ;
                                                 map.addOverlay(overlay) ;
