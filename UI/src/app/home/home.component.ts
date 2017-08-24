@@ -167,9 +167,9 @@ export class HomeComponent implements OnInit {
                 
                 //this.addMarker(parseFloat(this.users[0].long), parseFloat(this.users[0].lat), 0) ; 
 		
-		for(var i=0; i<this.users.length-1; i++){
+		for(var i=0; i<this.users.length; i++){
                         //this.users[i].url = "https://www.google.com";
-			this.addMarker(parseFloat(this.users[0].long), parseFloat(this.users[0].lat), 0) ;  
+			this.addMarker(parseFloat(this.users[i].long), parseFloat(this.users[i].lat), i) ;  
 		}
                 this.users = [];
 	}
