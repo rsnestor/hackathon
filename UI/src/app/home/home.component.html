@@ -10,16 +10,11 @@
 <div>
 <textarea id="echoText" rows="1" cols="100" style="border:none"></textarea>
 </div>
-<!--<ul>
-	<li *ngFor="let user of users">
-		{{user.name}}
-	</li>
-</ul>-->
+
 <table style="width:100%;height:100%;">
 	<tr>
 		<td style="width:80%;"><div id="map"></div></td>
-		<td>
-			<!--div style="height:100px"></div-->
+		<!--<td>
 			<table *ngIf="users.length > 0" align="center">
 			<thead>
 			<th>Latitude</th>
@@ -27,14 +22,14 @@
 			</thead>
 				<tbody>	
 					<tr *ngFor="let user of users">
-					<td>{{user.address.geo.lat}}</td>
-					<td>{{user.address.geo.lng}}</td>
+					<td>{{user.long}}</td>
+					<td>{{user.lat}}</td>
 					
 					</tr>
 				</tbody>
 				
 			</table>
-		<td>
+		<td>-->
 	</tr>
 </table>
 
