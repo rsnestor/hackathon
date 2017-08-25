@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.StringTokenizer;
 
 import javax.websocket.EncodeException;
 import javax.websocket.OnClose;
@@ -50,7 +51,7 @@ public class WebsocketServer {
 		System.out.println("Message from the client: " + message);
 		
 		
-		broadcastMessage("Property " + message + "is now under contract", session);
+		broadcastMessage(message, session);
 		}
 			
 	}
