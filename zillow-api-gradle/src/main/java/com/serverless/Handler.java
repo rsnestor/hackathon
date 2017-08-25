@@ -107,7 +107,7 @@ public class Handler implements RequestStreamHandler {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //System.out.println("response: " + resp);
+        System.out.println("property-api-resp: " + resp);
         return resp;
     }
 

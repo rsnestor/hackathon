@@ -51,17 +51,33 @@ package:
   artifact: build/distributions/get-peroperty-info.zip
 
 functions:
-  get:
+  propertyInfo:
     handler: com.serverless.Handler
-
-#    The following are a few example events you can configure
-#    NOTE: Please make sure to change your handler code to work with those events
-#    Check the event documentation for details
     events:
       - http:
           path: propertyInfo
           method: get
           cors: true
+  compareInfo:
+    handler: com.serverless.compares.Handler
+    events:
+      - http:
+          path: compareInfo
+          method: get
+          cors: true
+
+#functions:
+#  get:
+#    handler: com.serverless.Handler
+
+#    The following are a few example events you can configure
+#    NOTE: Please make sure to change your handler code to work with those events
+#    Check the event documentation for details
+#    events:
+#      - http:
+#          path: propertyInfo
+#          method: get
+#          cors: true
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
