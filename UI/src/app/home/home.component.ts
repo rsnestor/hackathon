@@ -138,7 +138,7 @@ export class HomeComponent implements OnInit {
 
                   }
 
-                  content.innerHTML += '<tr><td align="left"><button id="undercontract" onclick="sendMsg(\'' + self.users[id].street + '\')">Under Contract</button></td></tr>';
+                  '<tr><td><button id="undercontract" onclick="sendMsg(\'' + self.users[id].long + ":" + self.users[id].lat + ":" + self.users[id].id + '\')">Under Contract</button></td></tr>';
                   content.innerHTML += '</table>' +
                     '</div>' ;
 
