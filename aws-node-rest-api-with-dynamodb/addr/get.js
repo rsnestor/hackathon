@@ -24,6 +24,10 @@ module.exports.get = (event, context, callback) => {
     // create a response
     const response = {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // enable CORS
+        "Access-Control-Allow-Credentials" : true // cookies an https
+      },
       body: JSON.stringify(result.Item),
     };
     callback(null, response);
