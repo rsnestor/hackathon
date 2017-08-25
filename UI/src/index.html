@@ -110,10 +110,7 @@
 				console.log(count);
 				document.getElementById("count").innerHTML=count;
 			}else{
-				
-				
-				var el = document.getElementById("echoText");
-				el.value = message.data;				
+							
 				var arr = message.data.split(":");				
 				window['angularComponentRef'].zone.run(() => {window['angularComponentRef'].component.calledFromOutside(parseFloat(arr[0]), parseFloat(arr[1]), arr[2]);})
 				//window.angularComponentRef.zone.run(() => {window.angularComponentRef.calledFromOutside(arr[0], arr[1], arr[2]);})
