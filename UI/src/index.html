@@ -104,12 +104,11 @@
 			webSocket.close();
 		}
 		function wsGetMessage(message){		
-console.log("got message " + message.data);		
-			if(message.data.includes("count")){
-				
-				message.data.replace("count:", "")
-				console.log(message.data);
-				document.getElementById("count").innerHTML=message.data;
+			console.log("got message " + message.data);		
+			if(message.data.includes("count")){			
+				var count = message.data.replace("count:", "")
+				console.log(count);
+				document.getElementById("count").innerHTML=count;
 			}else{
 				
 				
