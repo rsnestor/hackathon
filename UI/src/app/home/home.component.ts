@@ -1,4 +1,4 @@
-import {Component, Input, Output, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit, NgZone} from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';	
 import {Observable} from "rxjs/Rx";
  import "rxjs/Rx";
@@ -26,7 +26,9 @@ export class HomeComponent implements OnInit {
 	
 	markerLayer: any;
 	
-	constructor(private http: Http) {}
+	constructor(private http: Http, private zone:NgZone) {
+		window['angularComponentRef'] = {component: this, zone: zone};
+	}
 	
 	ngOnInit(): void {
 		
@@ -104,7 +106,7 @@ export class HomeComponent implements OnInit {
                                                 '<tr><td><span>City: '+city+'</span></td></tr>' +
                                                 '<tr><td><span>Zipcode: '+zipcode+'</span></td></tr>' +
                                                 //'<tr><td><span>website: <a href="http://'+url+'"> '+url+'</a></span></td></tr>' + 
-												'<tr><td><button id="undercontract" onclick="sendMsg(\'' + self.users[id].street + '\')">Under Contract</button></td></tr>'
+												'<tr><td><button id="undercontract" onclick="sendMsg(\'' + self.users[id].long + ":" + self.users[id].lat + ":" + self.users[id].id + '\')">Under Contract</button></td></tr>'
                                                 '</table>' +
                                                 '</div>' ;
                                                 map.addOverlay(overlay) ;
@@ -119,7 +121,8 @@ export class HomeComponent implements OnInit {
                 this.markerLayer.getSource().clear() ;
         }
     
-        addMarker(lng, lat, id){
+        addMarker(lng, lat, id, image){
+				
                 var markerId = typeof(id)=='undefined'? 'asdfads':id
 
                 var text = new ol.style.Text({
@@ -135,16 +138,19 @@ export class HomeComponent implements OnInit {
                 }) ;
 
                 //add marker as feature
-                var iconStyle = new ol.style.Style({
+                var iconStyle = new ol.style.Style
+				({
                         image: new ol.style.Icon({
-                        anchor: [0.5, 0.5],
-                        anchorXUnits: 'fraction',
-                        anchorYUnits: 'fraction',
-                        opacity: 1,
-                        src: './house-icon.png',
-                        scale: 0.2
+							anchor: [0.5, 0.5],
+							anchorXUnits: 'fraction',
+							anchorYUnits: 'fraction',
+							opacity: 1,
+							src: image,
+							scale: 0.2
+							
                         }),
-                        //text:text
+                        //text:text,
+						
                 });
                 var feature = new ol.Feature(
                         new ol.geom.Point(ol.proj.fromLonLat([lng, lat]))
@@ -154,7 +160,8 @@ export class HomeComponent implements OnInit {
 
                 this.markerLayer.getSource().addFeature(feature) ;
         }
-	
+		
+		
 	getDetails() {
                 this.removeMarkers() ;
                 var i=0;
@@ -169,11 +176,25 @@ export class HomeComponent implements OnInit {
                         var latAddr = (data as any).lat;
                         
                         if(longAddr !== undefined && latAddr !== undefined){
-                                this.addMarker(parseFloat(longAddr), parseFloat(latAddr), i) ;          
+                                this.addMarker(parseFloat(longAddr), parseFloat(latAddr), i, "./house-icon.png") ;          
                         }
                         i = i+1;
 		});
                 
                 //this.users = [];
 	}
+	
+	removeMarker(long, lat){
+		 var feature = new ol.Feature(
+                        new ol.geom.Point(ol.proj.fromLonLat([long, lat]))
+                ) ;
+			this.markerLayer.removeFeatures([feature], false);
+	}
+	
+	calledFromOutside(long, lat, id) {
+		window['angularComponentRef'].zone.run(() => {
+			//this.removeMarker(long, lat);
+			this.addMarker(long, lat, id, "./yellowicon.png");
+	});
+}
 }
