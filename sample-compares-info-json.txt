@@ -1,0 +1,364 @@
+{
+  "Comps:comps": {
+    "request": {
+      "zpid": 12393217,
+      "count": 5
+    },
+    "xmlns:Comps": "http://www.zillow.com/static/xsd/Comps.xsd",
+    "response": {
+      "properties": {
+        "principal": {
+          "localRealEstate": {
+            "region": {
+              "zindexValue": "500,600",
+              "name": "Ashburn",
+              "links": {
+                "overview": "http://www.zillow.com/local-info/VA-Ashburn/r_16818/",
+                "forSaleByOwner": "http://www.zillow.com/ashburn-va/fsbo/",
+                "forSale": "http://www.zillow.com/ashburn-va/"
+              },
+              "id": 16818,
+              "type": "city"
+            }
+          },
+          "address": {
+            "zipcode": 20147,
+            "city": "Ashburn",
+            "street": "44009 Falmouth Ct",
+            "latitude": 39.059432,
+            "state": "VA",
+            "longitude": -77.478152
+          },
+          "zpid": 12393217,
+          "links": {
+            "homedetails": "http://www.zillow.com/homedetails/44009-Falmouth-Ct-Ashburn-VA-20147/12393217_zpid/",
+            "comparables": "http://www.zillow.com/homes/comps/12393217_zpid/",
+            "graphsanddata": "http://www.zillow.com/homedetails/44009-Falmouth-Ct-Ashburn-VA-20147/12393217_zpid/#charts-and-data",
+            "mapthishome": "http://www.zillow.com/homes/12393217_zpid/"
+          },
+          "zestimate": {
+            "last-updated": "08/24/2017",
+            "amount": {
+              "currency": "USD",
+              "content": 329304
+            },
+            "percentile": 21,
+            "valueChange": {
+              "duration": 30,
+              "currency": "USD",
+              "content": -2833
+            },
+            "oneWeekChange": {
+              "deprecated": true
+            },
+            "valuationRange": {
+              "high": {
+                "currency": "USD",
+                "content": 345769
+              },
+              "low": {
+                "currency": "USD",
+                "content": 312839
+              }
+            }
+          }
+        },
+        "comparables": {
+          "comp": [
+            {
+              "score": 19,
+              "localRealEstate": {
+                "region": {
+                  "zindexValue": "480,700",
+                  "name": "Leesburg",
+                  "links": {
+                    "overview": "http://www.zillow.com/local-info/VA-Leesburg/r_32471/",
+                    "forSaleByOwner": "http://www.zillow.com/leesburg-va/fsbo/",
+                    "forSale": "http://www.zillow.com/leesburg-va/"
+                  },
+                  "id": 32471,
+                  "type": "city"
+                }
+              },
+              "address": {
+                "zipcode": 20176,
+                "city": "Leesburg",
+                "street": "18142 Mill House Sq",
+                "latitude": 39.112465,
+                "state": "VA",
+                "longitude": -77.513896
+              },
+              "zpid": 59796916,
+              "links": {
+                "homedetails": "http://www.zillow.com/homedetails/18142-Mill-House-Sq-Leesburg-VA-20176/59796916_zpid/",
+                "comparables": "http://www.zillow.com/homes/comps/59796916_zpid/",
+                "graphsanddata": "http://www.zillow.com/homedetails/18142-Mill-House-Sq-Leesburg-VA-20176/59796916_zpid/#charts-and-data",
+                "mapthishome": "http://www.zillow.com/homes/59796916_zpid/"
+              },
+              "zestimate": {
+                "last-updated": "08/24/2017",
+                "amount": {
+                  "currency": "USD",
+                  "content": 346015
+                },
+                "percentile": 29,
+                "valueChange": {
+                  "duration": 30,
+                  "currency": "USD",
+                  "content": -3788
+                },
+                "oneWeekChange": {
+                  "deprecated": true
+                },
+                "valuationRange": {
+                  "high": {
+                    "currency": "USD",
+                    "content": 380616
+                  },
+                  "low": {
+                    "currency": "USD",
+                    "content": 328714
+                  }
+                }
+              }
+            },
+            {
+              "score": 4,
+              "localRealEstate": {
+                "region": {
+                  "zindexValue": "500,600",
+                  "name": "Ashburn",
+                  "links": {
+                    "overview": "http://www.zillow.com/local-info/VA-Ashburn/r_16818/",
+                    "forSaleByOwner": "http://www.zillow.com/ashburn-va/fsbo/",
+                    "forSale": "http://www.zillow.com/ashburn-va/"
+                  },
+                  "id": 16818,
+                  "type": "city"
+                }
+              },
+              "address": {
+                "zipcode": 20147,
+                "city": "Ashburn",
+                "street": "43905 Chloe Ter",
+                "latitude": 39.05048,
+                "state": "VA",
+                "longitude": -77.482126
+              },
+              "zpid": 12394440,
+              "links": {
+                "homedetails": "http://www.zillow.com/homedetails/43905-Chloe-Ter-Ashburn-VA-20147/12394440_zpid/",
+                "comparables": "http://www.zillow.com/homes/comps/12394440_zpid/",
+                "graphsanddata": "http://www.zillow.com/homedetails/43905-Chloe-Ter-Ashburn-VA-20147/12394440_zpid/#charts-and-data",
+                "mapthishome": "http://www.zillow.com/homes/12394440_zpid/"
+              },
+              "zestimate": {
+                "last-updated": "08/24/2017",
+                "amount": {
+                  "currency": "USD",
+                  "content": 322643
+                },
+                "percentile": 18,
+                "valueChange": {
+                  "duration": 30,
+                  "currency": "USD",
+                  "content": 16141
+                },
+                "oneWeekChange": {
+                  "deprecated": true
+                },
+                "valuationRange": {
+                  "high": {
+                    "currency": "USD",
+                    "content": 338775
+                  },
+                  "low": {
+                    "currency": "USD",
+                    "content": 306511
+                  }
+                }
+              }
+            },
+            {
+              "score": 4,
+              "localRealEstate": {
+                "region": {
+                  "zindexValue": "500,600",
+                  "name": "Ashburn",
+                  "links": {
+                    "overview": "http://www.zillow.com/local-info/VA-Ashburn/r_16818/",
+                    "forSaleByOwner": "http://www.zillow.com/ashburn-va/fsbo/",
+                    "forSale": "http://www.zillow.com/ashburn-va/"
+                  },
+                  "id": 16818,
+                  "type": "city"
+                }
+              },
+              "address": {
+                "zipcode": 20147,
+                "city": "Ashburn",
+                "street": "43926 Bonlee Sq",
+                "latitude": 39.050759,
+                "state": "VA",
+                "longitude": -77.48131
+              },
+              "zpid": 12394474,
+              "links": {
+                "homedetails": "http://www.zillow.com/homedetails/43926-Bonlee-Sq-Ashburn-VA-20147/12394474_zpid/",
+                "comparables": "http://www.zillow.com/homes/comps/12394474_zpid/",
+                "graphsanddata": "http://www.zillow.com/homedetails/43926-Bonlee-Sq-Ashburn-VA-20147/12394474_zpid/#charts-and-data",
+                "mapthishome": "http://www.zillow.com/homes/12394474_zpid/"
+              },
+              "zestimate": {
+                "last-updated": "08/24/2017",
+                "amount": {
+                  "currency": "USD",
+                  "content": 352181
+                },
+                "percentile": 29,
+                "valueChange": {
+                  "duration": 30,
+                  "currency": "USD",
+                  "content": 1394
+                },
+                "oneWeekChange": {
+                  "deprecated": true
+                },
+                "valuationRange": {
+                  "high": {
+                    "currency": "USD",
+                    "content": 369790
+                  },
+                  "low": {
+                    "currency": "USD",
+                    "content": 334572
+                  }
+                }
+              }
+            },
+            {
+              "score": 7,
+              "localRealEstate": {
+                "region": {
+                  "zindexValue": "500,600",
+                  "name": "Ashburn",
+                  "links": {
+                    "overview": "http://www.zillow.com/local-info/VA-Ashburn/r_16818/",
+                    "forSaleByOwner": "http://www.zillow.com/ashburn-va/fsbo/",
+                    "forSale": "http://www.zillow.com/ashburn-va/"
+                  },
+                  "id": 16818,
+                  "type": "city"
+                }
+              },
+              "address": {
+                "zipcode": 20147,
+                "city": "Ashburn",
+                "street": "44022 Florence Ter",
+                "latitude": 39.049127,
+                "state": "VA",
+                "longitude": -77.47653
+              },
+              "zpid": 12394585,
+              "links": {
+                "homedetails": "http://www.zillow.com/homedetails/44022-Florence-Ter-Ashburn-VA-20147/12394585_zpid/",
+                "comparables": "http://www.zillow.com/homes/comps/12394585_zpid/",
+                "graphsanddata": "http://www.zillow.com/homedetails/44022-Florence-Ter-Ashburn-VA-20147/12394585_zpid/#charts-and-data",
+                "mapthishome": "http://www.zillow.com/homes/12394585_zpid/"
+              },
+              "zestimate": {
+                "last-updated": "08/24/2017",
+                "amount": {
+                  "currency": "USD",
+                  "content": 402586
+                },
+                "percentile": 40,
+                "valueChange": {
+                  "duration": 30,
+                  "currency": "USD",
+                  "content": -4382
+                },
+                "oneWeekChange": {
+                  "deprecated": true
+                },
+                "valuationRange": {
+                  "high": {
+                    "currency": "USD",
+                    "content": 422715
+                  },
+                  "low": {
+                    "currency": "USD",
+                    "content": 382457
+                  }
+                }
+              }
+            },
+            {
+              "score": 7,
+              "localRealEstate": {
+                "region": {
+                  "zindexValue": "500,600",
+                  "name": "Ashburn",
+                  "links": {
+                    "overview": "http://www.zillow.com/local-info/VA-Ashburn/r_16818/",
+                    "forSaleByOwner": "http://www.zillow.com/ashburn-va/fsbo/",
+                    "forSale": "http://www.zillow.com/ashburn-va/"
+                  },
+                  "id": 16818,
+                  "type": "city"
+                }
+              },
+              "address": {
+                "zipcode": 20147,
+                "city": "Ashburn",
+                "street": "44004 Florence Ter",
+                "latitude": 39.049328,
+                "state": "VA",
+                "longitude": -77.477229
+              },
+              "zpid": 12394577,
+              "links": {
+                "homedetails": "http://www.zillow.com/homedetails/44004-Florence-Ter-Ashburn-VA-20147/12394577_zpid/",
+                "comparables": "http://www.zillow.com/homes/comps/12394577_zpid/",
+                "graphsanddata": "http://www.zillow.com/homedetails/44004-Florence-Ter-Ashburn-VA-20147/12394577_zpid/#charts-and-data",
+                "mapthishome": "http://www.zillow.com/homes/12394577_zpid/"
+              },
+              "zestimate": {
+                "last-updated": "08/24/2017",
+                "amount": {
+                  "currency": "USD",
+                  "content": 402272
+                },
+                "percentile": 40,
+                "valueChange": {
+                  "duration": 30,
+                  "currency": "USD",
+                  "content": -3665
+                },
+                "oneWeekChange": {
+                  "deprecated": true
+                },
+                "valuationRange": {
+                  "high": {
+                    "currency": "USD",
+                    "content": 422386
+                  },
+                  "low": {
+                    "currency": "USD",
+                    "content": 382158
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "xsi:schemaLocation": "http://www.zillow.com/static/xsd/Comps.xsd http://www.zillowstatic.com/vstatic/cea765e/static/xsd/Comps.xsd",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "message": {
+      "code": 0,
+      "text": "Request successfully processed"
+    }
+  }
+}
