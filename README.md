@@ -9,5 +9,6 @@ Hackathon 2
 - [Serverless](https://github.com/serverless/serverless#quick-start)
 - [Zillow API](https://www.zillow.com/howto/api/APIOverview.htm)
 - [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS)
-- [Websocket](http://websocket.org) 
-- [Spring STOMP](https://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html)Local websockets setup
+- [Websocket](http://websocket.org)
+- [OpenLayers](https://openlayers.org/)
+- [Angular](https://angular.io/)
