@@ -1,0 +1,7 @@
+{
+  "name": "aws-serve-fake-zillow-comps",
+  "version": "1.0.0",
+  "description": "Spoof for getComps API call",
+  "author": "",
+  "license": "MIT"
+}
