@@ -5,6 +5,7 @@ import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
 import com.jayway.restassured.path.json.JsonPath;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.XML;
 import org.springframework.web.client.RestTemplate;
@@ -31,9 +32,29 @@ public class Handler implements RequestStreamHandler {
 
         String resp = callZillowAPI(zpid, address, city, state, zipCode);
 
-        OutputStreamWriter writer = new OutputStreamWriter(output, "UTF-8");
-        writer.write(resp);
-        writer.close();
+        JSONObject responseJson = new JSONObject();
+        String responseCode = "200";
+
+        JSONObject headerJson = new JSONObject();
+
+        try {
+            headerJson.put("Access-Control-Allow-Origin", "*");
+            headerJson.put("Access-Control-Allow-Credentials", "true");
+
+            responseJson.put("statusCode", responseCode);
+            responseJson.put("headers", headerJson);
+            responseJson.put("body", resp);
+
+            OutputStreamWriter writer = new OutputStreamWriter(output, "UTF-8");
+            writer.write(responseJson.toString());
+
+            System.out.println("response-goes-here: " + responseJson.toString());
+            writer.close();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -79,14 +100,14 @@ public class Handler implements RequestStreamHandler {
 
             if (!StringUtils.isEmpty(resp)) {
                 JSONObject xmlJSONObj = XML.toJSONObject(resp);
-                resp = xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
+                resp = xmlJSONObj.toString();
             }
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("response: "+resp);
+        //System.out.println("response: " + resp);
         return resp;
     }
 
