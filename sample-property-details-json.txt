@@ -1,0 +1,65 @@
+{"SearchResults:searchresults": {
+    "message": {
+        "code": 0,
+        "text": "Request successfully processed"
+    },
+    "request": {
+        "address": "44009 Falmouth Ct",
+        "citystatezip": 20147
+    },
+    "response": {"results": {"result": {
+        "address": {
+            "city": "Ashburn",
+            "latitude": 39.059432,
+            "longitude": -77.478152,
+            "state": "VA",
+            "street": "44009 Falmouth Ct",
+            "zipcode": 20147
+        },
+        "links": {
+            "comparables": "http://www.zillow.com/homes/comps/12393217_zpid/",
+            "graphsanddata": "http://www.zillow.com/homedetails/44009-Falmouth-Ct-Ashburn-VA-20147/12393217_zpid/#charts-and-data",
+            "homedetails": "http://www.zillow.com/homedetails/44009-Falmouth-Ct-Ashburn-VA-20147/12393217_zpid/",
+            "mapthishome": "http://www.zillow.com/homes/12393217_zpid/"
+        },
+        "localRealEstate": {"region": {
+            "id": 16818,
+            "links": {
+                "forSale": "http://www.zillow.com/ashburn-va/",
+                "forSaleByOwner": "http://www.zillow.com/ashburn-va/fsbo/",
+                "overview": "http://www.zillow.com/local-info/VA-Ashburn/r_16818/"
+            },
+            "name": "Ashburn",
+            "type": "city",
+            "zindexValue": "500,600"
+        }},
+        "zestimate": {
+            "amount": {
+                "content": 329415,
+                "currency": "USD"
+            },
+            "last-updated": "08/23/2017",
+            "oneWeekChange": {"deprecated": true},
+            "percentile": 0,
+            "valuationRange": {
+                "high": {
+                    "content": 345886,
+                    "currency": "USD"
+                },
+                "low": {
+                    "content": 312944,
+                    "currency": "USD"
+                }
+            },
+            "valueChange": {
+                "content": -2516,
+                "currency": "USD",
+                "duration": 30
+            }
+        },
+        "zpid": 12393217
+    }}},
+    "xmlns:SearchResults": "http://www.zillow.com/static/xsd/SearchResults.xsd",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xsi:schemaLocation": "http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/cea765e/static/xsd/SearchResults.xsd"
+}}
